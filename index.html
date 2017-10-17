@@ -1,197 +1,86 @@
-<!--<html>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	</head>
-	<body>
-		<div id = "background">
-			<img src = "https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/14915343_588501431342490_6275193636799233170_n.jpg?oh=f98a3258e8b802fce45271d3b81b20bf&oe=5A3A031C"width="100%" height"100%" id = "backimg"></img>
-		</div>
-		<div id introback><div id introduce>
-			<div id myname>Hi! I am Tony</div> <br>
-			Now, I am a student in NCKUEE. CBIC lab<br>
-			We are devoted to developing IOT-based application in biomedical engineering<br>
-			Master in C code, Verilog, and Arduino; now study in machine learning<br> 
-			<br>
-	        </div></div>
-		</body>
-
-	<style>
-		*{
-			position:relative;
-			margin:0px;
-			padding:0px;
-		}
-		#background{
-			/*background-size:cover;*/
-			background:center center fixed no-repeat;
-			/*height:300vh;*/
-		}
-		#introduce{
-			font-size:150px;
-			width:20vw;
-			line-height:26px;
-			letter-spacing:0;
-			margin: 0 15px 15px 0;
-			float: left;
-			position: relative;
-			font-family:'Gloria Hallelujah';
-			z-index:1;
-		}
-	</style>
-</html>-->
-
 <html>
-	<body>
-	<div class="container">
-		    <div class="nav">
-				        <ul>
-							            <li style="background-color:#46dd46"></li>
-										            <li></li>
-													            <li></li>
-																            <li></li>
-																			            <li></li>
-																						        </ul>
-																								    </div>
-																									    <div class="p01"><h1>Page 1</h1></div>
-																										    <div class="p02"><h1>Page 2</h1></div>
-																											    <div class="p03"><h1>Page 3</h1></div>
-																												    <div class="p04"><h1>Page 4</h1></div>
-																													    <div class="p05"><h1>Page 5</h1></div>
-																													</div>
-	</body>
-<style>
-	*{
-		        padding:0;
-				        margin:0;
-						    }
-							    body{
-									        overflow: hidden;
-											    }
-												/*    插入背景圖片    */
-												    .p01{
-														        background-image:url(http://lorempixel.com/1024/768/sports/1/Dummy-Text/);
-																        background-size:cover;
-																		        background-repeat: no-repeat;
-																				        height:100vh;
-																						    }
-																							    .p02{
-																									        background-image:url(http://lorempixel.com/1024/768/);
-																											        background-size:cover;
-																													        background-repeat: no-repeat;
-																															        height:100vh;
-																																	    }
-																																		    .p03{
-																																				        background-image:url(http://lorempixel.com/1024/768/sports/);
-																																						        background-size:cover;
-																																								        background-repeat: no-repeat;
-																																										        height:100vh;
-																																												    }
-																																													    .p04{
-																																															        background-image:url(http://lorempixel.com/1024/768/sports/Dummy-Text/);
-																																																	        background-size:cover;
-																																																			        background-repeat: no-repeat;
-																																																					        height:100vh;
-																																																							    }
-																																																								    .p05{
-																																																										        background-image:url(http://lorempixel.com/1024/768/sports/Dummy-Text/);
-																																																												        background-size:cover;
-																																																														        background-repeat: no-repeat;
-																																																																        height:100vh;
-																																																																		    }
-																																																																			/*    插入導覽列     */
-																																																																			    .nav{
-																																																																					        position: fixed;
-																																																																							        top:50%;
-																																																																									        right:0px;
-																																																																											        cursor:pointer;
-																																																																													    }
-																																																																														    li{
-																																																																																        width:10px;
-																																																																																		        height:10px; 
-																																																																																				        margin: 10px;
-																																																																																						        background-color: white;
-																																																																																								        border-radius: 5px;
-																																																																																										        box-shadow: 1px 1px 1px rgba(0,0,0,0.5) inset,-1px -1px 1px rgba(0,0,0,0.5) inset;
-																																																																																												        list-style-type: none;
-																																																																																														    }
-																																																																																															    h1{
-																																																																																																	        font-size:60px;
-																																																																																																			        color:ghostwhite;
-																																																																																																					        text-shadow:0px 0px 15px black;
-																																																																																																							    }
-</style>
-	
-<script>
-	$(document).ready(function(){
-		            var num_li=$("li").length//偵測我們有幾個標點（圖片）
-					            
-					            //滾動滑鼠滾輪時，移動到上一頁、下一頁的效果
-								            n=1
-											            moving=0
-														            $(window).mousewheel(function(e){
-																		                $("html,body").stop()
-																						                if(moving==0){
-																											                    moving=1
-																																                    if(e.deltaY==-1){
-																																						                        if(n<num_li){
-																																													                            n++
-																																																					                        }
-																																																										                    }else{
-																																																																                        if(n>1){
-																																																																							                            n--
-																																																																														                        }
-																																																																																				                    }
-																																																																																									                }
-																																																																																													                $("html,body").animate({"scrollTop":$(".p0"+n).offset().top},function(){moving=0})
-																																																																																																	                console.log(n)
-																																																																																																					            })
-																																																																																																								            
-																																																																																																								            //根據捲軸的位置改變右方導覽列游標的顏色
-																																																																																																											            $(window).scroll(function(){
-																																																																																																															                 if($(window).scrollTop()>=$(".p01").offset().top && $(window).scrollTop()<$(".p02").offset().top){
-																																																																																																																				                     $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
-																																																																																																																									                     $(".nav li:eq(0)").css("background-color","#46dd46")
-																																																																																																																														                 }else if($(window).scrollTop()>=$(".p02").offset().top && $(window).scrollTop()<$(".p03").offset().top){
-																																																																																																																																			                     $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
-																																																																																																																																								                     $(".nav li:eq(1)").css("background-color","#46dd46")
-																																																																																																																																													                 }else if($(window).scrollTop()>=$(".p03").offset().top && $(window).scrollTop()<$(".p04").offset().top){
-																																																																																																																																																		                     $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
-																																																																																																																																																							                     $(".nav li:eq(2)").css("background-color","#46dd46")
-																																																																																																																																																												                 }else if($(window).scrollTop()>=$(".p04").offset().top && $(window).scrollTop()<$(".p05").offset().top){
-																																																																																																																																																																	                     $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
-																																																																																																																																																																						                     $(".nav li:eq(3)").css("background-color","#46dd46")
-																																																																																																																																																																											                 }else if($(window).scrollTop()>=$(".p05").offset().top){
-																																																																																																																																																																																                     $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
-																																																																																																																																																																																					                     $(".nav li:eq(4)").css("background-color","#46dd46")
-																																																																																																																																																																																										                 }
-																																																																																																																																																																																														             })
-																																																																																																																																																																																																	                      
-																																																																																																																																																																																																	             //點選右方導覽列時會到指定圖片
-																																																																																																																																																																																																				             for(i=0;i<=num_li;i++){
-																																																																																																																																																																																																								                 $(".nav li:eq("+i+")").click({id:i},function(e){
-																																																																																																																																																																																																													                     $("html,body").stop()
-																																																																																																																																																																																																																		                     $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
-																																																																																																																																																																																																																							                     page=e.data.id+1
-																																																																																																																																																																																																																												                     $("html,body").animate({"scrollTop":$(".p0"+page).offset().top})
-																																																																																																																																																																																																																																	                     $(".nav li:eq("+e.data.id+")").css("background-color","#46dd46")//被點擊到的游標變色，前面的selector用this也可以
-																																																																																																																																																																																																																																						                     n=e.data.id+1
-																																																																																																																																																																																																																																											                 })
-																																																																																																																																																																																																																																															             }
-																																																																																																																																																																																																																																																		             //一進入網頁時，將導覽列垂直置中計算導覽列置中的位置
-																																																																																																																																																																																																																																																					            center()
-																																																																																																																																																																																																																																																								            
-																																																																																																																																																																																																																																																								           //縮放網頁時，將導覽列垂直置中
-																																																																																																																																																																																																																																																										               $(window).resize(function(){
-																																																																																																																																																																																																																																																														                   center()
-																																																																																																																																																																																																																																																																		               })
-																																																																																																																																																																																																																																																																					               
-																																																																																																																																																																																																																																																																					               //計算導覽列垂直置中的高度
-																																																																																																																																																																																																																																																																								               function center(){
-																																																																																																																																																																																																																																																																												                   pos=$(window).height()/2-$(".nav").height()/2
-																																																																																																																																																																																																																																																																																                   $(".nav").css("top",pos)
-																																																																																																																																																																																																																																																																																				               }
-																																																																																																																																																																																																																																																																																							               
-																																																																																																																																																																																																																																																																																							           })
-</script>
+	    <head><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script></head>
+		    <head><title>Tony's Resume</title></head>
+			    <body>
+					        
+					        <div id = "page1">
+										<div class = "background">
+														<img src = "https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/14915343_588501431342490_6275193636799233170_n.jpg?oh=f98a3258e8b802fce45271d3b81b20bf&oe=5A3A031C" width="100%" height="100%" id = "backimg"></img>   
+																</div>
+																        
+																        <div id = "introduce">
+																						<h3>I am Tony~~Click for more!</h3>   
+																							        </div>
+																									        <div id = "intro">
+																												                Now, I am a student in NCKUEE CBIC lab<br>
+																																                We are devoted to developing IOT-based application in biomedical engineering<br>
+																																				                Master in C code, Verilog, and Arduino; now study in machine learning<br><br>
+																																								                <a href="https://www.facebook.com/profile.php?id=100000374036189"><img src="http://blog.addthiscdn.com/wp-content/uploads/2015/11/logo-facebook.png" style="padding-right" width=35 height=35></a>
+																																												                <a href="https://www.instagram.com/hjhjhhhjjjjhhhjhjjh/?hl=zh-tw"><img src="https://lh3.googleusercontent.com/aYbdIM1abwyVSUZLDKoE0CDZGRhlkpsaPOg9tNnBktUQYsXflwknnOn2Ge1Yr7rImGk=w300"style="padding-right"width=35 height=35></a>
+																																																      <a href="https://github.com/littleyueh"><img src="https://maxcdn.icons8.com/Share/icon/Logos//github1600.png"style="padding-right" width=35 height=35></a>
+																																																	              </div>
 
-</html>
+																																																				          </div>
+																																																						      </body>
+																																																							      
+																																																							      <style>
+																																																									  	   
+																																																									          html, body {
+																																																												              width: 100%;
+																																																															              height: 100%;
+																																																																		              margin: 0px;
+																																																																					              padding: 0px;
+																																																																								          }
+																																																																										  		.background{
+																																																																													            position:absolute;
+																																																																																            width:100%;
+																																																																																			            height:100%;
+																																																																																								}
+																																																																																										#introduce{     
+																																																																																											            line-height: 20px;
+																																																																																														            letter-spacing: 0;
+																																																																																																	            top:500px;
+																																																																																																				            position: relative;
+																																																																																																							            font-size: 20px;
+																																																																																																										            font-family: Trebuchet MS;
+																																																																																																													            z-index:1;
+																																																																																																																            text-align: center;
+																																																																																																																					}
+																																																																																																																					        #intro{
+																																																																																																																								            line-height: 20px;
+																																																																																																																											            letter-spacing: 0;
+																																																																																																																														            position: relative;
+																																																																																																																																	            top:500px;
+																																																																																																																																				            font-size: 20px;
+																																																																																																																																							            font-family: Trebuchet MS;
+																																																																																																																																										            z-index:1;
+																																																																																																																																													            text-align: center
+																																																																																																																																																            
+																																																																																																																																																        }
+																																																																																																																																																		        #contact{
+																																																																																																																																																					            line-height: 20px;
+																																																																																																																																																								            letter-spacing: 0;
+																																																																																																																																																											            position: relative;
+																																																																																																																																																														            top:500px;
+																																																																																																																																																																	            font-size: 20px;
+																																																																																																																																																																				            font-family: Trebuchet MS;
+																																																																																																																																																																							            z-index:1;
+																																																																																																																																																																										            text-align: center
+																																																																																																																																																																													        }
+																																																																																																																																																																																</style>
+																																																																																																																																																																																    
+																																																																																																																																																																																    <script type="text/javascript">
+																																																																																																																																																																																		        $(document).ready(function(){
+																																																																																																																																																																																					        $("#intro").hide();
+																																																																																																																																																																																							        $("#contact").hide();
+																																																																																																																																																																																									        $("#page1").click(function(){
+																																																																																																																																																																																												        $("#introduce").hide();
+																																																																																																																																																																																														        });
+																																																																																																																																																																																																        $("#page1").click(function(){
+																																																																																																																																																																																																			        $("#intro").show();
+																																																																																																																																																																																																					        });
+
+																																																																																																																																																																																																							        });
+																																																																																																																																																																																																									    </script>
+																																																																																																																																																																																																										    
+																																																																																																																																																																																																									</html>
