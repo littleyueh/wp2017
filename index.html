@@ -1,4 +1,4 @@
-<html>
+<!--<html>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
@@ -6,14 +6,14 @@
 		<div id = "background">
 			<img src = "https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/14915343_588501431342490_6275193636799233170_n.jpg?oh=f98a3258e8b802fce45271d3b81b20bf&oe=5A3A031C"width="100%" height"100%" id = "backimg"></img>
 		</div>
-		<!--<div id introback><div id introduce>
+		<div id introback><div id introduce>
 			<div id myname>Hi! I am Tony</div> <br>
 			Now, I am a student in NCKUEE. CBIC lab<br>
 			We are devoted to developing IOT-based application in biomedical engineering<br>
 			Master in C code, Verilog, and Arduino; now study in machine learning<br> 
 			<br>
-	        </div></div>-->
-	</body>
+	        </div></div>
+		</body>
 
 	<style>
 		*{
@@ -25,9 +25,6 @@
 			/*background-size:cover;*/
 			background:center center fixed no-repeat;
 			/*height:300vh;*/
-		}
-		#backimg{
-			height:300vh;
 		}
 		#introduce{
 			font-size:150px;
@@ -41,6 +38,118 @@
 			z-index:1;
 		}
 	</style>
-</html>
+</html>-->
 
+<div class = "container">
+	<div class = "nav">
+		<u1>
+		<li style = "background-color:#46dd46"></li>
+		<li></li>
+		</u1>
+	</div>
+	<div class = "p01"><h1>Page 1 </h1></div>
+	<div class = "p02"><h1>Page 2 </h1></div>
+</div>
+
+<style>
+	*{
+		padding:0;
+		margin:0;
+	}
+	body{overflow:hidden;}
+	
+	.p01{
+		background-image:url(http://lorepixel.com/1024/768/sports/1/Dummy-Text/);
+		background-size:cover;
+		background-repeat:no-repeat;
+		height:100vh;
+	}
+	.p02{
+		background-image:url(http://lorempixel.com/1024/768/);
+		background-size:cover;
+		background-repeat:no-repeat;
+		height:100vh;
+	}
+
+	.nav{
+		position:fixed;
+		top:50%;
+		right:0px;
+		cursor:pointer;
+	}
+	li{
+		width:10px;
+		height:10px;
+		margin:10px;
+		background-color:white;
+		border-radius:5px;
+		box-shadow:1px 1px 1px rgba(0,0,0,0.5) inset, -1px -1px 1px rgba(0,0,0,0.5) inset;
+		list-style-type:none;
+	}
+	h1{
+		font-size:60px;
+		color:ghostwhite;
+		text-shadow:0px 0px 15px black;
+	}
+
+</style>
+
+<script>
+	$(document).ready(function(){
+		var num_li = $("li").length
+		n = 1
+		moving = 0
+		$(window).mousewheel(function(e)){
+			$("html,body").stop()
+			if(moving == 0){
+				moving = 1
+				if(e.deltaY==-1){
+					if(n<num_li){
+						n++
+					}
+				}else{
+					if(n>1){
+						n--
+					}
+				}
+				}
+				$("html,body").animate({"scrollTop":$(".p0"+n).offset().top,function(){moving=0})
+				console.log(n)
+		}
+	)
+	$(window).scroll(function(){
+		if($(window).scrollTop()>=$(".p01").offset().top && $(window).scrollTop()<$(".p02").offset().top){
+			$(".nav li").css("background-color","white")
+			$(".nav li:eq(0)").css("background-color","#46dd46")
+	}else if($(window).scrollTop()>=$(".p02").offset().top && $(window).scrollTop()<$(".p03").offset().top){
+		$(".nav li").css("background-color","white")
+		$(".nav li:eq(1)").css("background-color","#46dd46")
+	}
+	})
+
+	for(i=0;i<=num_li;i++){
+		$(".nav li:eq("+i+")").click({id:i},function(e){
+			$("html,body").stop()
+			$(".nav li").css("background-color","white")
+			page=e.data.id+1
+			$("html,body").animate({"scrollTop":$(".p0+page").offset().top})
+			$(".nav li:eq("+e.data.id+")").css("background-color","#46dd46")
+			n=e.data.id+1
+		})
+	}
+
+	center()
+	$(window).resize(function(){
+		center()
+	})
+
+	function center(){
+		pos=$(window).height()/2-$(".nav").height()/2
+		$(".nav").css("top",pos)
+	}
+
+})
+
+
+</script>
 
