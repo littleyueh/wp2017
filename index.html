@@ -40,6 +40,8 @@
 	</style>
 </html>-->
 
+<html>
+
 <div class = "container">
 	<div class = "nav">
 		<u1>
@@ -59,7 +61,7 @@
 	body{overflow:hidden;}
 	
 	.p01{
-		background-image:url(http://lorepixel.com/1024/768/sports/1/Dummy-Text/);
+		background-image:url(https://3.bp.blogspot.com/-1oxOuPx-mZo/V9nMTLf2nUI/AAAAAAAAP6I/fQXCrhQhvOsyX1cYjt0Eo1mT-2LWwQIpACLcB/s1600/TUKY1690.jpg);
 		background-size:cover;
 		background-repeat:no-repeat;
 		height:100vh;
@@ -99,7 +101,7 @@
 		var num_li = $("li").length
 		n = 1
 		moving = 0
-		$(window).mousewheel(function(e)){
+		$(window).mousewheel(function(e){
 			$("html,body").stop()
 			if(moving == 0){
 				moving = 1
@@ -113,17 +115,17 @@
 					}
 				}
 				}
-				$("html,body").animate({"scrollTop":$(".p0"+n).offset().top,function(){moving=0})
+				$("html,body").animate({"scrollTop":$(".p0"+n).offset().top},function(){moving=0})
 				console.log(n)
 		}
 	)
 	$(window).scroll(function(){
 		if($(window).scrollTop()>=$(".p01").offset().top && $(window).scrollTop()<$(".p02").offset().top){
 			$(".nav li").css("background-color","white")
-			$(".nav li:eq(0)").css("background-color","#46dd46")
+			$(".nav li:eq(0)").css("background-color","white")
 	}else if($(window).scrollTop()>=$(".p02").offset().top && $(window).scrollTop()<$(".p03").offset().top){
 		$(".nav li").css("background-color","white")
-		$(".nav li:eq(1)").css("background-color","#46dd46")
+		$(".nav li:eq(1)").css("background-color","white")
 	}
 	})
 
@@ -132,8 +134,8 @@
 			$("html,body").stop()
 			$(".nav li").css("background-color","white")
 			page=e.data.id+1
-			$("html,body").animate({"scrollTop":$(".p0+page").offset().top})
-			$(".nav li:eq("+e.data.id+")").css("background-color","#46dd46")
+			$("html,body").animate({"scrollTop":$(".p0"+page).offset().top})
+			$(".nav li:eq("+e.data.id+")").css("background-color","black")
 			n=e.data.id+1
 		})
 	}
@@ -153,3 +155,4 @@
 
 </script>
 
+</html>
